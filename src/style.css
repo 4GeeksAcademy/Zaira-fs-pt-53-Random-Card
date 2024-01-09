@@ -1,1 +1,46 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: rgb(70, 180, 70);
+  margin-top: 20px;
+}
+#card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+  width: 300px;
+  position: relative;
+  font-size: 100px;
+  border-radius: 20px;
+  margin: auto;
+}
+
+#topSuit {
+  align-self: flex-start;
+}
+
+#cardValue {
+  text-align: center;
+  align-self: center;
+  font-size: 125px;
+}
+
+#bottomSuit {
+  align-self: flex-end;
+  transform: rotate(180deg);
+}
+#topSuit,
+#bottomSuit {
+  color: red; /* Default color for hearts and diamonds */
+}
+
+#card[class*="♠"] #topSuit,
+#card[class*="♠"] #bottomSuit,
+#card[class*="♣"] #topSuit,
+#card[class*="♣"] #bottomSuit {
+  color: black;
+}
+/*The [class*="♠"] part is an attribute selector that looks for the substring "♠" 
+in the class attribute. The *= operator means "contains." 
+It allows for a more flexible and dynamic selection based on the presence of the "♠" substring within the class attribute.*/
